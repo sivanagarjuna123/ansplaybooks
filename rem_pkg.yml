@@ -1,0 +1,12 @@
+---
+- name: my test playbook
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: this is to remove package
+    yum:
+      name: tree
+      state: removed
+
+

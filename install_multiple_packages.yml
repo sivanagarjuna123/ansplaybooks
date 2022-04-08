@@ -1,0 +1,13 @@
+---
+- name: my test playbook
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: This is to create the multiple users
+    user:
+      name: ['pavan', 'rama', 'rakesh']
+      password: ['n', 'm', 'q']
+      state: present
+
+

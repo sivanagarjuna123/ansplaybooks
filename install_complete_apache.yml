@@ -1,0 +1,48 @@
+---
+- name: my test playbook
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: Installing httpd
+    yum:
+      name: httpd
+      state: latest
+    when: ansible_os_family == "RedHat"
+
+  - name: Starting httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "RedHat"
+
+  - name: Installing apache2
+    apt:
+      name: apache2
+      state: present
+    when: ansible_os_family == "Debian"
+   
+  - name: Starting apache2
+    service:
+      name: apach
+      state: started
+    when: ansible_os_family == "Debian"
+  
+  - name: copy index.html
+    copy:
+      src: /home/ansadmin/index.html
+      dest: /var/www/html
+      mode: 0666
+   
+
+
+    
+        
+        
+
+          
+  
+
+        
+
+   

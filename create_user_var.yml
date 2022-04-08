@@ -1,0 +1,13 @@
+---
+- name: This is my playbook
+  hosts: all
+  become: yes
+  
+  vars:
+    user: mango
+
+  tasks:
+  - name: creating user {{user}}
+    user: 
+      name: "{{user}}"
+

@@ -1,0 +1,15 @@
+---
+- name: my test playbook
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: creating to create a file
+    copy:
+      src: /home/ansadmin/textfile
+      dest: /home/ansadmin/
+      owner: ansadmin
+      group: ansadmin
+      mode: 0644
+
+

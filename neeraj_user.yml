@@ -1,0 +1,12 @@
+---
+- name: This playbook is to create a file
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: creating a file
+    file: 
+      path: /home/ansadmin/neerajfile
+      state: touch
+
+

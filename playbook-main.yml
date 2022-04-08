@@ -1,0 +1,8 @@
+---
+- name: This playbook installs httpd and debian
+  hosts: all
+  become: yes
+
+  roles:
+  - setup-role
+   
